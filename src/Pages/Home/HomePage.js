@@ -35,9 +35,12 @@ function HomePage() {
       <img alt="banner" className="banner-image" src={BannerImage} />
       <div className="button-container">
         {triggerScan && (
-          <a onClick={() => setScan((prev) => !prev)} className="close-button">
+          <button
+            onClick={() => setScan((prev) => !prev)}
+            className="close-button"
+          >
             <img alt="close" src={Close} />
-          </a>
+          </button>
         )}
         <button
           onClick={() => setScan((prev) => !prev)}
