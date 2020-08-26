@@ -4,14 +4,14 @@ import Logo from "../../Images/logo.png";
 import { Link } from "react-router-dom";
 import Menu from "../../Images/menu.png";
 
-function Header({}) {
+function Header() {
   const [toggle, setToggle] = useState(false);
 
   return (
     <header className="header">
       <div className="header-nav-container">
         <div className="logo-container">
-          <img src={Logo} />
+          <img alt="logo" src={Logo} />
           <h4>Dinemate</h4>
         </div>
         <div className="explore-container">
@@ -27,7 +27,7 @@ function Header({}) {
             onClick={() => setToggle((prev) => !prev)}
             className="menu-button"
           >
-            <img src={Menu} />
+            <img alt="menu" src={Menu} />
           </button>
         </div>
       </div>

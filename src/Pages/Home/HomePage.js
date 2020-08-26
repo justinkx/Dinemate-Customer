@@ -6,7 +6,7 @@ import QrReader from "react-qr-reader";
 import Close from "../../Images/close.png";
 import { useHistory } from "react-router-dom";
 
-function HomePage({}) {
+function HomePage() {
   const history = useHistory();
   const [triggerScan, setScan] = useState(false);
   useEffect(() => {
@@ -32,18 +32,18 @@ function HomePage({}) {
   };
   return (
     <div className="container center">
-      <img className="banner-image" src={BannerImage} />
+      <img alt="banner" className="banner-image" src={BannerImage} />
       <div className="button-container">
         {triggerScan && (
           <a onClick={() => setScan((prev) => !prev)} className="close-button">
-            <img src={Close} />
+            <img alt="close" src={Close} />
           </a>
         )}
         <button
           onClick={() => setScan((prev) => !prev)}
           className="scan-button"
         >
-          <img className="camera-icon" src={Camera} />
+          <img alt="camera" className="camera-icon" src={Camera} />
           Scan
         </button>
         <div className={`scanner-card ${triggerScan ? "" : "hide-scanner"}`}>
@@ -64,7 +64,7 @@ function HomePage({}) {
   );
 }
 export function getUrlParameter(name, url) {
-  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  name = name.replace(/[[]/, "[").replace(/[\]]/, "\\]");
   var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
   var results = regex.exec(url);
   return results === null
